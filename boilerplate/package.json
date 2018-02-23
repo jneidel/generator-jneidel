@@ -1,0 +1,30 @@
+{
+  "name": "<name>",
+  "version": "0.0.0",
+  "description": "<desc>",
+  "repository": "jneidel/<name>",
+  "license": "MIT",
+  "author": {
+    "name": "Jonathan Neidel",
+    "email": "jneidel@outlook.com",
+    "url": "https://jneidel.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^5.0.1"
+  }
+}
