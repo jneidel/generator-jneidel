@@ -1,16 +1,17 @@
 # <name>
 
 [![](https://circleci.com/gh/jneidel/<name>/tree/master.svg?style=shield&circle-token=<token>)](https://circleci.com/gh/jneidel/py-range)
+[![](https://img.shields.io/npm/dw/<name>.svg)](https://www.npmjs.com/package/<name>)
 
 <desc>
 
 ## Install
 
+[![](https://img.shields.io/npm/v/<name>.svg)](https://www.npmjs.com/package/<name>)
+
 ```
 $ npm install <name>
 ```
-
-[https://www.npmjs.com/package/<name>](https://www.npmjs.com/package/<name>)
 
 ## Usage
 
