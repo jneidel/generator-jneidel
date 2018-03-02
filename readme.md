@@ -26,3 +26,8 @@ curl -fsSL https://github.com/jneidel/node-module-boilerplate/archive/master.tar
 | `<token>` | as circleci api token |
 
 ### [Start building on circleci](https://circleci.com/add-projects/gh/jneidel)
+
+## Attribution
+
+Based on [sindresorhus/node-module-boilerplate](https://github.com/sindresorhus/node-module-boilerplate).
+
