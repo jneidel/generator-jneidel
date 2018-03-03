@@ -1,16 +1,13 @@
 {
-  "name": "<name>",
+  "name": "<%= moduleName %>",
   "version": "0.0.0",
-  "description": "<desc>",
-  "repository": "jneidel/<name>",
+  "description": "<%= description %>",
+  "repository": "<%= username %>/<%= moduleName %>",
   "license": "MIT",
   "author": {
-    "name": "Jonathan Neidel",
-    "email": "jneidel@outlook.com",
-    "url": "https://jneidel.com"
-  },
-  "engines": {
-    "node": ">=4"
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorUrl %>"
   },
   "scripts": {
     "test": "mocha test.js"

@@ -1,9 +1,9 @@
 const expect = require( "expect" );
-const <func> = require( "./index" );
+const <%= moduleName %> = require( "./index" );
 
 /* globals describe it */
 
-describe( "<name>", () => {
+describe( "<%= moduleName %>", () => {
   it( "", () => {
     expect( )
       .toBe( );
