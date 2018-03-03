@@ -56,9 +56,11 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    [ ".travis.yml", ".gitignore", ".npmrc", "index.js" ].forEach( ( item ) => {
-      this.fs.copy( this.templatePath( item ), this.destinationPath( item ) );
+    [ "travis.yml", "gitignore", "npmrc" ].forEach( ( item ) => {
+      this.fs.copy( this.templatePath( item ), this.destinationPath( `.${item}` ) );
     } );
+
+    this.fs.copy( this.templatePath( "index.js" ), this.destinationPath( "index.js" ) );
 
     const { authorName, authorEmail, authorUrl, moduleName, username, description } = this.props;
 
