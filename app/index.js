@@ -68,13 +68,14 @@ module.exports = class extends Generator {
       [ "licence", { authorName, authorEmail, authorUrl, year: new Date().getFullYear() } ],
       [ "test.js", { moduleName } ],
       [ "readme.md", { moduleName, authorName, username } ],
-      [ "package.json", { moduleName, authorName, username, authorEmail, description, authorUrl } ],
     ].forEach( ( item ) => {
       const name = item[0];
       const options = item[1];
 
       this.fs.copyTpl( this.templatePath( name ), this.destinationPath( name ), options );
     } );
+
+    this.fs.copyTpl( this.templatePath( "_package.json" ), this.destinationPath( "package.json" ), { moduleName, authorName, username, authorEmail, description, authorUrl } );
   }
 
   git() {
