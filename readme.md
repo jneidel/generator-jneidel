@@ -10,6 +10,11 @@ Boilerplate for creating a node-modules.
 
 Boilerplates can be installed manually or using [Yeoman](https://github.com/yeoman/yo) as a scaffolding tool.
 
+<div align="center">
+  <br>
+  <img src="https://i.imgur.com/8UpFnXZ.png" alt="Usage: yo jneidel">
+</div>
+
 ## Install manually
 
 In your directory, run:
