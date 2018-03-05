@@ -85,7 +85,7 @@ module.exports = class extends Generator {
     this.spawnCommandSync( "git", [ "init" ] );
   }
 
-  _install() {
+  install() {
     this.npmInstall();
   }
 };
