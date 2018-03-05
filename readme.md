@@ -8,7 +8,7 @@
 
 Boilerplate for creating a node-modules.
 
-Boilerplates can be installed manually or using [Yeoman](https://github.com/yeoman/yo) as a scaffolding tool.
+Boilerplates can be installed manually or using [Yeoman](https://github.com/yeoman/yo) (recommended) as a scaffolding tool.
 
 <div align="center">
   <br>
@@ -28,7 +28,7 @@ $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz 
 [![](https://img.shields.io/npm/v/generator-jneidel.svg)](https://www.npmjs.com/package/generator-jneidel)
 
 ```
-$ npm install -g yo generator-jneidel
+$ npm install -g generator-jneidel yo
 ```
 
 ## Usage
@@ -38,6 +38,17 @@ With [yo](https://www.npmjs.com/package/yo):
 ```
 $ yo jneidel
 ```
+
+## Assumptions
+
+These boilerplates assume, that you're using:
+
+- MIT licence
+- Mocha (as testing framework)
+- Travis (as CI)
+- Webpack (as build system)
+- NPM (as package manager)
+- Github (as your git-repository)
 
 ## Test
 
