@@ -13,7 +13,8 @@
     "test": "mocha test.js"
   },
   "files": [
-    "app"
+    "app",
+    "chrome"
   ],
   "engines": {
     "node": ">=6"
