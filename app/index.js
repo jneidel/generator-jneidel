@@ -1,5 +1,4 @@
 const Generator = require( "yeoman-generator" );
-const mkdirp = require( "mkdirp" );
 const path = require( "path" );
 const chalk = require( "chalk" );
 const _s = require( "underscore.string" );
@@ -32,16 +31,18 @@ module.exports = class extends Generator {
         validate: x => ( x.length > 0 ? true : "You have to provide a username" ),
       },
       {
-        type   : "input",
-        name   : "authorName",
-        message: "What is your full name?",
-        store  : true,
+        type    : "input",
+        name    : "authorName",
+        message : "What is your full name?",
+        store   : true,
+        validate: x => ( x.length > 0 ? true : "You have to provide your name" ),
       },
       {
-        type   : "input",
-        name   : "authorEmail",
-        message: "What is your email?",
-        store  : true,
+        type    : "input",
+        name    : "authorEmail",
+        message : "What is your email?",
+        store   : true,
+        validate: x => ( x.length > 0 ? true : "You have to provide your email" ),
       },
       {
         type   : "input",
@@ -60,14 +61,16 @@ module.exports = class extends Generator {
       this.fs.copy( this.templatePath( item ), this.destinationPath( `.${item}` ) );
     } );
 
-    this.fs.copy( this.templatePath( "index.js" ), this.destinationPath( "index.js" ) );
+    [ "index.js", "todo.md" ].forEach( ( item ) => {
+      this.fs.copy( this.templatePath( item ), this.destinationPath( item ) );
+    } );
 
     const { authorName, authorEmail, authorUrl, moduleName, username, description } = this.props;
 
     [
       [ "licence", { authorName, authorEmail, authorUrl, year: new Date().getFullYear() } ],
       [ "test.js", { moduleName } ],
-      [ "readme.md", { moduleName, authorName, username } ],
+      [ "readme.md", { moduleName, authorName, username, description } ],
     ].forEach( ( item ) => {
       const name = item[0];
       const options = item[1];
@@ -82,7 +85,7 @@ module.exports = class extends Generator {
     this.spawnCommandSync( "git", [ "init" ] );
   }
 
-  install() {
+  _install() {
     this.npmInstall();
   }
 };

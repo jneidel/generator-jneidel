@@ -1,3 +1,4 @@
 node_modules/
-*.env
 .yo-rc.json
+*.env
+todo.md
