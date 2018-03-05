@@ -1,12 +1,17 @@
 # generator-jneidel
 
-> Collection of boilerplates
+> Opinionated collection of boilerplates
 
 [![](https://api.travis-ci.org/jneidel/generator-jneidel.svg?branch=master)](https://travis-ci.org/jneidel/generator-jneidel)
 [![](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/jneidel/generator-jneidel/blob/master/licence)
 [![](https://img.shields.io/npm/dw/generator-jneidel.svg)](https://www.npmjs.com/package/generator-jneidel)
 
-Boilerplate for creating a node-modules.
+Boilerplates for creating a:
+
+- node module
+- chrome extension
+
+## Install
 
 Boilerplates can be installed manually or using [Yeoman](https://github.com/yeoman/yo) (recommended) as a scaffolding tool.
 
@@ -15,15 +20,23 @@ Boilerplates can be installed manually or using [Yeoman](https://github.com/yeom
   <img src="https://i.imgur.com/8UpFnXZ.png" alt="Usage: yo jneidel">
 </div>
 
-## Install manually
+### Install manually
 
 In your directory, run:
+
+**node module:**
 
 ```
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=3 generator-jneidel-master/app/templates
 ```
 
-## Install using Yeoman
+**chrome extension:**
+
+```
+$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=3 generator-jneidel-master/chrome/templates
+```
+
+### Install using Yeoman
 
 [![](https://img.shields.io/npm/v/generator-jneidel.svg)](https://www.npmjs.com/package/generator-jneidel)
 
@@ -35,8 +48,16 @@ $ npm install -g generator-jneidel yo
 
 With [yo](https://www.npmjs.com/package/yo):
 
+**node module:**
+
 ```
 $ yo jneidel
+```
+
+**chrome extension:**
+
+```
+$ yo jneidel:chrome
 ```
 
 ## Assumptions
@@ -58,7 +79,7 @@ $ npm run test
 
 ## Attribution
 
-Inspired by [sindresorhus/node-module-boilerplate](https://github.com/sindresorhus/node-module-boilerplate), [sindresorhus/generator-nm](https://github.com/sindresorhus/generator-nm).
+Inspired by [sindresorhus/node-module-boilerplate](https://github.com/sindresorhus/node-module-boilerplate) and [sindresorhus/generator-nm](https://github.com/sindresorhus/generator-nm).
 
 ## License
 
