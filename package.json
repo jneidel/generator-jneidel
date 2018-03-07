@@ -14,7 +14,8 @@
   },
   "files": [
     "app",
-    "chrome"
+    "chrome",
+    "node"
   ],
   "engines": {
     "node": ">=6"
