@@ -1,0 +1,50 @@
+{
+  "name": "<%= moduleName %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "repository": "<%= username %>/<%= moduleName %>",
+  "license": "MIT",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorUrl %>"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run watch\" \"npm run build\" \"npm run unit\" --names \"💻 ,📦 ,☕️ \" --prefix name",
+    "watch": "nodemon app.js --ignore dist/js/ --ignore tests/ --trace-sync-io",
+    "build": "webpack -w",
+    "unit": "nodemon --exec 'mocha ./tests/unit/*.test.js' --ignore dist/",
+    "test": "mocha ./tests/*/*.test.js",
+    "prod": "node -r dotenv/config app.js dotenv_config_path=vars.env"
+  },
+  "dependencies": {
+    "axios": "latest",
+    "bcrypt": "latest",
+    "body-parser": "latest",
+    "connect-flash": "latest",
+    "compression": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "express-sessions": "latest",
+    "jsonwebtoken": "latest",
+    "mongoose": "latest",
+    "mongoose-mongodb-errors": "latest",
+    "normalize-scss": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "pug": "latest",
+    "validator": "latest"
+  },
+  "devDependencies": {
+    "ajv": "latest",
+    "concurrently": "latest",
+    "expect": "1.20.2",
+    "mocha": "latest",
+    "mockery": "latest",
+    "morgan": "latest",
+    "nodemon": "latest",
+    "setup-webpack": "latest",
+    "sinon": "latest"
+  }
+}

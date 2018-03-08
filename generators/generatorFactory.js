@@ -105,7 +105,7 @@ module.exports = function genGenerator( wording, write ) {
       this.spawnCommandSync( "git", [ "init" ] );
     }
 
-    _install() {
+    install() {
       this.npmInstall();
     }
   };

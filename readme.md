@@ -10,6 +10,7 @@ Boilerplates for creating a:
 
 - node module
 - chrome extension
+- node webapp
 
 ## Install
 
@@ -22,18 +23,22 @@ Boilerplates can be installed manually or using [Yeoman](https://github.com/yeom
 
 ### Install manually
 
-In your directory, run:
-
 **node module:**
 
 ```
-$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=3 generator-jneidel-master/app/templates
+$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/app/templates
 ```
 
 **chrome extension:**
 
 ```
-$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=3 generator-jneidel-master/chrome/templates
+$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/chrome/templates
+```
+
+**webapp:**
+
+```
+$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/web/templates 
 ```
 
 ### Install using Yeoman
@@ -58,6 +63,12 @@ $ yo jneidel
 
 ```
 $ yo jneidel:chrome
+```
+
+**webapp:**
+
+```
+$ yo jneidel:web
 ```
 
 ## Assumptions
