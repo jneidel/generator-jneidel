@@ -57,7 +57,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    [ "travis.yml", "gitignore", "npmrc" ].forEach( ( item ) => {
+    [ "travis.yml", "gitignore", "npmrc", "editorconfig" ].forEach( ( item ) => {
       this.fs.copy( this.templatePath( item ), this.destinationPath( `.${item}` ) );
     } );
 

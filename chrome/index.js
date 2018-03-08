@@ -67,7 +67,7 @@ module.exports = class extends Generator {
     await mkdir( this.destinationPath( "src/bundles" ) );
     await mkdir( this.destinationPath( "tests" ) );
 
-    [ "travis.yml", "gitignore", "npmrc" ].forEach( ( item ) => {
+    [ "travis.yml", "gitignore", "npmrc", "editorconfig" ].forEach( ( item ) => {
       this.fs.copy( this.templatePath( item ), this.destinationPath( `.${item}` ) );
     } );
 
