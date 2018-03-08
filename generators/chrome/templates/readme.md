@@ -4,6 +4,7 @@
 
 [![Build](https://api.travis-ci.org/<%= username %>/<%= moduleName %>.svg?branch=master)](https://travis-ci.org/<%= username %>/<%= moduleName %>)
 [![Licence](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/<%= username %>/<%= moduleName %>/blob/master/licence)
+<%= codestyle %>
 
 ## Install
 

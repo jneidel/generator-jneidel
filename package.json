@@ -13,9 +13,7 @@
     "test": "mocha test.js"
   },
   "files": [
-    "app",
-    "chrome",
-    "node"
+    "generators"
   ],
   "engines": {
     "node": ">=6"
