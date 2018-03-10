@@ -1,6 +1,7 @@
 const express = require( "express" );
 const mongoose = require( "mongoose" );
 const mongodbErrorHandler = require( "mongoose-mongodb-errors" );
+const helmet = require( "helmet" );
 const bodyParser = require( "body-parser" );
 const compression = require( "compression" );
 const sessions = require( "express-session" );
@@ -27,6 +28,8 @@ const User = require( "./models/User" );
 mongoose.Promise = global.Promise;
 mongoose.plugin( mongodbErrorHandler );
 mongoose.connect( process.env.MONGO );
+
+app.use( helmet( { referrerPolicy: true } ) );
 
 app.set( "view engine", "pug" );
 app.set( "views", `${__dirname}/src/pug` );

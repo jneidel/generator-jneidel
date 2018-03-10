@@ -27,11 +27,10 @@ exports.pattern = ":customDate - :status :method :url - :response-time ms";
 exports.patternShort = ":status :method :url - :response-time ms";
 
 exports.filterResources = ( req ) => {
-  // Dont log requests to 'public/css|js|img'
+  // Dont log requests to 'public/js|css|img|favicon.ico'
   if ( req.url || req.originalUrl ) {
     const url = req.url || req.originalUrl;
-    const sub = url.slice( 0, 5 );
-    return sub === "/css/" || sub === "/img/" || sub.slice( 0, 4 ) === "/js/";
+    return url.slice( 0, 4 ) === "/js/" || url.slice( 0, 5 ) === "/css/" || url.slice( 0, 5 ) === "/img/" || url.slice( 0, 12 ) === "/favicon.ico";
   }
   return true;
 };

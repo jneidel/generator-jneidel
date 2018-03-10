@@ -27,6 +27,7 @@
     "express": "latest",
     "express-session": "latest",
     "express-sessions": "latest",
+    "helmet": "latest",
     "jsonwebtoken": "latest",
     "mongoose": "latest",
     "mongoose-mongodb-errors": "latest",
