@@ -14,14 +14,14 @@ router.post( "/register", async ( req, res, next ) => {
     const newUser = new User( { username } );
     newUser.password = req.body.password;
     newUser.save();
-    res.send( "New User Registered" );
+    res.send( "Successful Register" );
   }
 } );
 
 router.get( "/login", ( req, res ) => res.render( "login", { user: req.user } ) );
 
 router.post( "/login", passport.authenticate( "local" ), ( req, res ) => {
-  res.redirect( "/" );
+  res.send( "Successful Login!" );
 } );
 
 router.get( "/logout", ( req, res ) => {
