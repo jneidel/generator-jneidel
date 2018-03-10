@@ -1,10 +1,10 @@
 # <%= moduleName %>
 
-> <%= description %> 
+> <%= description %>
 
-[![Build](https://api.travis-ci.org/<%= username %>/<%= moduleName %>.svg?branch=master)](https://travis-ci.org/<%= username %>/<%= moduleName %>)
-[![Version](https://img.shields.io/badge/version-versionHere-blue.svg)](https://github.com/<%= username %>/<%= moduleName %>/releases)
-[![Licence](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/<%= username %>/<%= moduleName %>/blob/master/licence)
+[![Travis Build Status](https://img.shields.io/travis/<%= username %>/<%= moduleName %>.svg?style=flat-square)](https://travis-ci.org/<%= username %>/<%= moduleName %>)
+[![Github Release](https://img.shields.io/github/release/<%= username %>/<%= moduleName %>/all.svg?style=flat-square)](https://github.com/<%= username %>/<%= moduleName %>/releases)
+[![Licence MIT](https://img.shields.io/badge/licence-MIT-green.svg?style=flat-square)](https://github.com/<%= username %>/<%= moduleName %>/blob/master/licence)
 <%= codestyle %>
 
 Description

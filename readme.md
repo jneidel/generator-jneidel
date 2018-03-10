@@ -2,9 +2,10 @@
 
 > Opinionated collection of boilerplates
 
-[![Build](https://api.travis-ci.org/jneidel/generator-jneidel.svg?branch=master)](https://travis-ci.org/jneidel/generator-jneidel)
-[![Licence](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/jneidel/generator-jneidel/blob/master/licence)
-[![Npm](https://img.shields.io/npm/dt/generator-jneidel.svg)](https://www.npmjs.com/package/generator-jneidel)
+
+[![Travis Build Status](https://img.shields.io/travis/jneidel/generator-jneidel.svg?style=flat-square)](https://travis-ci.org/jneidel/generator-jneidel)
+[![Licence MIT](https://img.shields.io/badge/licence-MIT-green.svg?style=flat-square)](https://github.com/jneidel/generator-jneidel/blob/master/licence)
+[![Npm Downloads](https://img.shields.io/npm/dt/generator-jneidel.svg?style=flat-square)](https://www.npmjs.com/package/generator-jneidel)
 
 Boilerplates for creating a:
 
@@ -43,7 +44,7 @@ $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz 
 
 ### Install using Yeoman
 
-[![Version](https://img.shields.io/npm/v/generator-jneidel.svg)](https://www.npmjs.com/package/generator-jneidel)
+[![Npm Version](https://img.shields.io/npm/v/generator-jneidel.svg?style=flat-square)](https://www.npmjs.com/package/generator-jneidel)
 
 ```
 $ npm install -g generator-jneidel yo

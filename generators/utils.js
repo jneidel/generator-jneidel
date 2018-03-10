@@ -70,4 +70,4 @@ exports.genCodestyleOption = function genCodestyleOption() {
   } );
 };
 
-exports.genStyleBadge = link => `[![Code style](https://img.shields.io/badge/code%20style-custom-ff69b4.svg)](${link})`;
+exports.genStyleBadge = link => `[![Code Style Custom](https://img.shields.io/badge/code%20style-custom-ff69b4.svg?style=flat-square)](${link})`;
