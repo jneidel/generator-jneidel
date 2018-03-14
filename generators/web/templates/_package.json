@@ -13,8 +13,8 @@
     "start": "concurrently \"npm run watch\" \"npm run build\" \"npm run unit\" --names \"💻 ,📦 ,☕️ \" --prefix name",
     "watch": "nodemon app.js --ignore dist/js/ --ignore tests/ --trace-sync-io",
     "build": "webpack -w",
-    "unit": "nodemon --exec 'mocha ./tests/unit/*.test.js' --ignore dist/",
-    "test": "mocha ./tests/*/*.test.js",
+    "unit": "nodemon --exec 'ava ./tests/unit/*.test.js' --ignore dist/",
+    "test": "ava ./tests/*/*.test.js",
     "prod": "node -r dotenv/config app.js dotenv_config_path=vars.env"
   },
   "dependencies": {
@@ -39,9 +39,8 @@
   },
   "devDependencies": {
     "ajv": "latest",
+    "ava": "latest",
     "concurrently": "latest",
-    "expect": "1.20.2",
-    "mocha": "latest",
     "mockery": "latest",
     "morgan": "latest",
     "nodemon": "latest",

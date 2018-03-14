@@ -10,14 +10,13 @@
     "url": "<%= authorUrl %>"
   },
   "scripts": {
-    "test": "mocha test.js",
+    "test": "ava tests/*.test.js",
     "build": "webpack -w"
   },
   "dependencies": {},
   "devDependencies": {
+    "ava": "latest",
     "dotenv": "latest",
-    "expect": "1.20.2",
-    "mocha": "latest",
     "setup-webpack": "latest"
   }
 }

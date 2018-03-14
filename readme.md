@@ -77,7 +77,7 @@ $ yo jneidel:web
 These boilerplates assume, that you're using:
 
 - MIT licence
-- Mocha (as testing framework)
+- Ava (as testing framework)
 - Travis (as CI)
 - Webpack (as build system)
 - NPM (as package manager)

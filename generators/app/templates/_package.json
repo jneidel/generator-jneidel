@@ -10,7 +10,7 @@
     "url": "<%= authorUrl %>"
   },
   "scripts": {
-    "test": "mocha test.js"
+    "test": "ava test.js"
   },
   "main": "index.js",
   "files": [
@@ -24,7 +24,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "expect": "1.20.2",
-    "mocha": "latest"
+    "ava": "latest"
   }
 }

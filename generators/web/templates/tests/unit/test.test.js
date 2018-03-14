@@ -1,4 +1,4 @@
-const expect = require( "expect" );
+const { test } = require( "ava" );
 const sinon = require( "sinon" );
 const mockery = require( "mockery" );
 mockery.enable( { warnOnUnregistered: false, warnOnReplace: false } );
@@ -7,10 +7,6 @@ const { generateArgs, expectResJson } = require( "./utils" );
 
 const next = () => {};
 
-/* global describe it xit */
+test( "${moduleName}", ( t ) => {
 
-describe( "<%= moduleName %>", () => {
-  xit( "", () => {
-
-  } );
 } );
