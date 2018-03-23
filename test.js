@@ -21,7 +21,7 @@ describe( "generator-jneidel", () => {
       .withPrompts( { someAnswer: true } ) );
 
     it( "creates files", () => {
-      assert.file( [ ".travis.yml", ".gitignore", ".npmrc", ".editorconfig", "webpack.config.js", "licence", "vars.env", "readme.md", "package.json", "todo.md", "dist/img/icon.png", "src/js/background.js", "src/js/options.js", "src/scss/options.scss", "src/bundles/options.bundle.js", "src/pug/options.pug", "tests/test.js", "dist/manifest.json" ] );
+      assert.file( [ ".travis.yml", ".gitignore", ".npmrc", ".editorconfig", "webpack.config.js", "licence", "vars.env", "readme.md", "package.json", "todo.md", "dist/img/icon.png", "src/js/background.js", "src/js/options.js", "src/scss/options.scss", "src/bundles/options.bundle.js", "src/pug/options.pug", "tests/test.test.js", "dist/manifest.json" ] );
     } );
   } );
 

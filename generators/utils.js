@@ -14,7 +14,7 @@ exports.genPrompts = function genPrompts( type ) {
     {
       type   : "input",
       name   : "moduleName",
-      message: `What do you want to name your ${type} ?`,
+      message: `What do you want to name your ${type}?`,
       default: _s.slugify( this.appname ),
       filter : x => slugifyPackageName( x ),
     },
