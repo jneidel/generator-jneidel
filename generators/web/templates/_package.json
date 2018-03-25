@@ -47,5 +47,8 @@
     "setup-webpack": "latest",
     "sinon": "latest",
     "sinon-mongoose": "latest"
+  },
+  "ava": {
+    "files": [ "test/*.test.js", "test/**/*.test.js" ]
   }
 }

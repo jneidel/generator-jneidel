@@ -25,5 +25,8 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "latest"
+  },
+  "ava": {
+    "files": [ "test.js", "test/*.test.js" ]
   }
 }

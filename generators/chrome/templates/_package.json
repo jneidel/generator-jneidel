@@ -18,5 +18,8 @@
     "ava": "latest",
     "dotenv": "latest",
     "setup-webpack": "latest"
+  },
+  "ava": {
+    "files": "test/*.test.js"
   }
 }
