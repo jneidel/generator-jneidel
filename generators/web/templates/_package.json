@@ -45,6 +45,7 @@
     "morgan": "latest",
     "nodemon": "latest",
     "setup-webpack": "latest",
-    "sinon": "latest"
+    "sinon": "latest",
+    "sinon-mongoose": "latest"
   }
 }

@@ -99,6 +99,7 @@ module.exports = function genGenerator( wording, write ) {
       write.insert.forEach( item => cpTpl( item[0], item[0], genTemplateProps( item[1] ) ) );
 
       cpTpl( "_package.json", "package.json", { moduleName, authorName, username, authorEmail, description, authorUrl } );
+      cpTpl( "travis.yml", ".travis.yml", { authorEmail } );
     }
 
     git() {

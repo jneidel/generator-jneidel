@@ -1,7 +1,7 @@
 const genGenerator = require( "../generatorFactory" );
 
 module.exports = genGenerator( { long: "node module", short: "module" }, {
-  dotfiles  : [ "travis.yml", "gitignore", "npmrc", "editorconfig" ],
+  dotfiles  : [ "gitignore", "npmrc", "editorconfig" ],
   files     : [ "index.js", "todo.md" ],
   insertName: [ "test.js" ],
   insert    : [
