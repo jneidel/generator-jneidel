@@ -2,12 +2,11 @@
 
 > Opinionated collection of boilerplates
 
-
 [![Travis Build Status](https://img.shields.io/travis/jneidel/generator-jneidel.svg?style=flat-square)](https://travis-ci.org/jneidel/generator-jneidel)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-green.svg?style=flat-square)](https://github.com/jneidel/generator-jneidel/blob/master/licence)
-[![Npm Downloads](https://img.shields.io/npm/dt/generator-jneidel.svg?style=flat-square)](https://www.npmjs.com/package/generator-jneidel)
+[![Npm Downloads](https://img.shields.io/npm/dw/generator-jneidel.svg?style=flat-square)](https://www.npmjs.com/package/generator-jneidel)
 
-Boilerplates for creating a:
+Boilerplates available for creating:
 
 - node module
 - chrome extension
@@ -24,21 +23,14 @@ Boilerplates can be installed manually or using [Yeoman](https://github.com/yeom
 
 ### Install manually
 
-**node module:**
-
-```
+```zsh
+# node module
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/app/templates
-```
 
-**chrome extension:**
-
-```
+# chrome extension
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/chrome/templates
-```
 
-**webapp:**
-
-```
+# webapp
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/web/templates
 ```
 
@@ -77,11 +69,11 @@ $ yo jneidel:web
 These boilerplates assume, that you're using:
 
 - MIT licence
-- Ava (as testing framework)
-- Travis (as CI)
-- Webpack (as build system)
-- NPM (as package manager)
-- Github (as your git-repository)
+- Ava (testing framework)
+- Travis (CI)
+- Webpack (build system)
+- NPM (package manager)
+- GitHub (git repo hosting)
 
 ## Test
 
@@ -96,3 +88,4 @@ Inspired by [sindresorhus/node-module-boilerplate](https://github.com/sindresorh
 ## License
 
 MIT © [Jonathan Neidel](https://jneidel.com)
+
