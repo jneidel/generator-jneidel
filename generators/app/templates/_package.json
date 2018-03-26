@@ -24,7 +24,8 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "ava": "latest"
+    "ava": "latest",
+    "nodemon": "latest"
   },
   "ava": {
     "files": [ "test.js", "test/*.test.js" ]
