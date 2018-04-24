@@ -1,10 +1,10 @@
-const genGenerator = require( "../generatorFactory" );
+const genGenerator = require( "../generator-factory" );
 
 module.exports = genGenerator( { long: "node module", short: "module" }, {
-  dotfiles  : [ "gitignore", "npmrc", "editorconfig" ],
-  files     : [ "index.js", "todo.md" ],
+  dotfiles  : [ "gitignore" ],
+  files     : [ "index.js" ],
   insertName: [ "test.js" ],
   insert    : [
-    [ "licence", [ "authorName", "authorEmail", "authorUrl", "year" ] ],
-    [ "readme.md", [ "moduleName", "authorName", "authorUrl", "username", "description", "codestyle" ] ] ],
+    [ "readme.md", [ "moduleName", "authorName", "authorUrl", "username", "description", "codestyle" ] ],
+  ],
 } );

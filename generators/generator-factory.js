@@ -39,18 +39,19 @@ module.exports = function genGenerator( wording, write ) {
       this.props.codestyle = this.props.codestyle ? genStyleBadge( this.props.codestyle ) : "";
     }
 
-    async writing() {
+    writing() {
       const cp = ( from, to ) => this.fs.copy( this.templatePath( from ), this.destinationPath( to ) );
       const cpTpl = ( from, to, options ) => this.fs.copyTpl( this.templatePath( from ), this.destinationPath( to ), options );
 
       const { authorName, authorEmail, authorUrl, moduleName, username, description, codestyle } = this.props;
+      const year = new Date().getFullYear();
 
       function genTemplateProps( props ) {
         const result = {};
 
         props.forEach( ( item ) => {
           switch ( item ) {
-            case "authorName" :
+            case "authorName":
               result.authorName = authorName;
               break;
             case "authorEmail":
@@ -72,7 +73,7 @@ module.exports = function genGenerator( wording, write ) {
               result.codestyle = codestyle;
               break;
             case "year":
-              result.year = new Date().getFullYear();
+              result.year = year;
           }
         } );
 
@@ -81,7 +82,7 @@ module.exports = function genGenerator( wording, write ) {
 
       // Folders
       if ( write.folders ) {
-        write.folders.forEach( async ( item ) => { await mkdir( this.destinationPath( item ) ); } );
+        write.folders.forEach( item => mkdir( this.destinationPath( item ) ) );
       }
 
       // Dotfiles
@@ -99,7 +100,12 @@ module.exports = function genGenerator( wording, write ) {
       write.insert.forEach( item => cpTpl( item[0], item[0], genTemplateProps( item[1] ) ) );
 
       cpTpl( "_package.json", "package.json", { moduleName, authorName, username, authorEmail, description, authorUrl } );
-      cpTpl( "travis.yml", ".travis.yml", { authorEmail } );
+
+      cp( "../../shared-template/todo.md", "todo.md" );
+      cp( "../../shared-template/editorconfig", ".editorconfig" );
+      cp( "../../shared-template/npmrc", ".npmrc" );
+      cpTpl( "../../shared-template/travis.yml", ".travis.yml", { authorEmail } );
+      cpTpl( "../../shared-template/license", "license", { authorName, authorEmail, authorUrl, year } );
     }
 
     git() {
