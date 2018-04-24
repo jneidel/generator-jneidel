@@ -9,19 +9,16 @@
     "email": "<%= authorEmail %>",
     "url": "<%= authorUrl %>"
   },
-  "scripts": {
-    "test": "ava test.js"
-  },
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
-  "keywords": [
-    ""
-  ],
+  "scripts": {
+    "test": "ava test.js"
+  },
   "dependencies": {},
   "devDependencies": {
     "ava": "latest",
@@ -29,5 +26,8 @@
   },
   "ava": {
     "files": [ "test.js", "test/*.test.js" ]
-  }
+  },
+  "keywords": [
+    ""
+  ]
 }
