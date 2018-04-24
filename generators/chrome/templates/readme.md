@@ -3,7 +3,7 @@
 > <%= description %>
 
 [![Travis Build Status](https://img.shields.io/travis/<%= username %>/<%= moduleName %>.svg?style=flat-square)](https://travis-ci.org/<%= username %>/<%= moduleName %>)
-[![Licence MIT](https://img.shields.io/badge/licence-MIT-green.svg?style=flat-square)](https://github.com/<%= username %>/<%= moduleName %>/blob/master/licence)
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/<%= username %>/<%= moduleName %>/blob/master/license)
 <%= codestyle %>
 
 ## Install

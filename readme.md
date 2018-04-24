@@ -3,7 +3,7 @@
 > Opinionated collection of boilerplates
 
 [![Travis Build Status](https://img.shields.io/travis/jneidel/generator-jneidel.svg?style=flat-square)](https://travis-ci.org/jneidel/generator-jneidel)
-[![Licence MIT](https://img.shields.io/badge/licence-MIT-green.svg?style=flat-square)](https://github.com/jneidel/generator-jneidel/blob/master/licence)
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/jneidel/generator-jneidel/blob/master/license)
 [![Npm Downloads](https://img.shields.io/npm/dw/generator-jneidel.svg?style=flat-square)](https://www.npmjs.com/package/generator-jneidel)
 
 Boilerplates available for creating:
@@ -68,7 +68,7 @@ $ yo jneidel:web
 
 These boilerplates assume, that you're using:
 
-- MIT licence
+- MIT license
 - Ava (testing framework)
 - Travis (CI)
 - Webpack (build system)
