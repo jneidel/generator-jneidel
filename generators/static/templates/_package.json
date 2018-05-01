@@ -1,0 +1,27 @@
+{
+  "name": "<%= moduleName %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "repository": "<%= username %>/<%= moduleName %>",
+  "license": "MIT",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorUrl %>"
+  },
+  "scripts": {
+    "test": "ava",
+    "build": "webpack -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "latest",
+    "setup-webpack": "latest"
+  },
+  "ava": {
+    "files": [
+      "test.js",
+      "test/*.test.js"
+    ]
+  }
+}

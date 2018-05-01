@@ -32,6 +32,9 @@ $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz 
 
 # webapp
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/web/templates
+
+# static site
+$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/static/templates
 ```
 
 ### Install using Yeoman
@@ -64,6 +67,12 @@ $ yo jneidel:chrome
 $ yo jneidel:web
 ```
 
+**static website:**
+
+```
+$ yo jneidel:static
+```
+
 ## Assumptions
 
 These boilerplates assume, that you're using:
@@ -72,8 +81,10 @@ These boilerplates assume, that you're using:
 - Ava (testing framework)
 - Travis (CI)
 - Webpack (build system)
+- Scss (CSS)
+- Pug (HTML)
 - NPM (package manager)
-- GitHub (git repo hosting)
+- GitHub (git hosting)
 
 ## Test
 
