@@ -10,16 +10,22 @@
     "url": "<%= authorUrl %>"
   },
   "scripts": {
-    "test": "ava tests/*.test.js",
-    "build": "webpack -w"
+    "test": "ava",
+    "build": "webpack -w",
+    "sync": "browser-sync --server --files [ 'dist' ]",
+    "watch": "concurrently 'npm run build' 'npm run sync' --names '📦,🔄' --prefix name"
   },
   "dependencies": {},
   "devDependencies": {
     "ava": "latest",
+    "concurrently": "latest",
     "dotenv": "latest",
     "setup-webpack": "latest"
   },
   "ava": {
-    "files": "test/*.test.js"
+    "files": [
+      "test.js",
+      "test/*.test.js"
+    ]
   }
 }

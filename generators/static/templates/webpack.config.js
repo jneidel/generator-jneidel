@@ -1,5 +1,5 @@
 const path = require( "path" );
-const { genScss, genPug, babel, uglify, minify } = require( "setup-webpack" );
+const { genScss, pug, babel, polyfill } = require( "setup-webpack" );
 
 require( "dotenv" ).config( { path: "vars.env" } );
 
@@ -10,22 +10,25 @@ const config = [];
 // Array of sites
 [ "index" ].forEach( ( name ) => {
   const scss = genScss( `../css/${name}.css` );
-  const pug = genPug( `../html/${name}.html` );
+  const entryPath = `./src/bundles/${name}.bundle.js`;
 
   config.push( {
-    entry : `./src/bundles/${name}.bundle.js`,
+    mode  : prod ? "production" : "development",
+    entry : prod ? polyfill( entryPath ) : entryPath,
     output: {
       path    : path.resolve( __dirname, "dist/js" ),
       filename: `${name}.js`,
     },
     module: {
       loaders: prod ?
-        [ babel, scss.loader, pug.loader ] :
-        [ scss.loader, pug.loader ],
+        [ babel, scss.loader, pug( `../html/${name}.html` ) ] :
+        [ scss.loader, pug( `../html/${name}.html` ) ],
     },
-    plugins: prod ?
-      [ minify, uglify, scss.plugin, pug.plugin ] :
-      [ scss.plugin, pug.plugin ],
+    plugins     : [ scss.plugin ],
+    optimization: {
+      minimize : true,
+      minimizer: [ scss.minimizer ],
+    },
   } );
 } );
 

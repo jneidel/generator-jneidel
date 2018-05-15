@@ -1,18 +1,21 @@
 const path = require( "path" );
-const { genScss, genPug, babel, uglify, minify } = require( "setup-webpack" );
+const { genScss, pug, babel } = require( "setup-webpack" );
 
 require( "dotenv" ).config( { path: "vars.env" } );
 
 const prod = process.env.NODE_ENV === "prod";
 
 const config = [ {
+  mode  : prod ? "production" : "development",
   entry : `./src/js/background.js`,
   output: {
     path    : path.resolve( __dirname, "dist/js" ),
     filename: "background.js",
   },
-  module : { loaders: prod ? [ babel ] : [] },
-  plugins: prod ? [ minify, uglify ] : [],
+  module      : { rules: prod ? [ babel ] : [] },
+  optimization: {
+    minimize: true,
+  },
 } ];
 
 // Extension has only a single page
@@ -20,22 +23,24 @@ const config = [ {
 const name = "options"; // site name
 
 const scss = genScss( `../css/${name}.css` );
-const pug = genPug( `../html/${name}.html` );
 
 config.push( {
+  mode  : prod ? "production" : "development",
   entry : `./src/bundles/${name}.bundle.js`,
   output: {
     path    : path.resolve( __dirname, "dist/js" ),
     filename: `${name}.js`,
   },
   module: {
-    loaders: prod ?
-      [ babel, scss.loader, pug.loader ] :
-      [ scss.loader, pug.loader ],
+    rules: prod ?
+      [ babel, scss.rule, pug( `../html/${name}.html` ) ] :
+      [ scss.rule, pug( `../html/${name}.html` ) ],
   },
-  plugins: prod ?
-    [ minify, uglify, scss.plugin, pug.plugin ] :
-    [ scss.plugin, pug.plugin ],
+  plugins     : [ scss.plugin ],
+  optimization: {
+    minimize : true,
+    minimizer: [ scss.minimizer ],
+  },
 } );
 
 /*
@@ -44,22 +49,24 @@ config.push( {
 // Array of sites
 [ "options", "help" ].forEach( ( name ) => {
   const scss = genScss( `../css/${name}.css` );
-  const pug = genPug( `../html/${name}.html` );
 
   config.push( {
+    mode  : prod ? "production" : "development",
     entry : `./src/bundles/${name}.bundle.js`,
     output: {
       path    : path.resolve( __dirname, "dist/js" ),
       filename: `${name}.js`,
     },
     module: {
-      loaders: prod ?
-        [ babel, scss.loader, pug.loader ] :
-        [ scss.loader, pug.loader ],
+      rules: prod ?
+        [ babel, scss.rule, pug( `../html/${name}.html` ) ] :
+        [ scss.rule, pug( `../html/${name}.html` ) ],
     },
-    plugins: prod ?
-      [ minify, uglify, scss.plugin, pug.plugin ] :
-      [ scss.plugin, pug.plugin ],
+    plugins     : [ scss.plugin ],
+    optimization: {
+      minimize : true,
+      minimizer: [ scss.minimizer ],
+    },
   } );
 } );
 */
