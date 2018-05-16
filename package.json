@@ -10,7 +10,8 @@
     "url": "https://jneidel.com"
   },
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha test.js",
+    "shared": "node ./generators/shared-template/copy-shared.js"
   },
   "files": [
     "generators"
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "mocha": "^5.1.1",
+    "mz": "^2.7.0",
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^1.7.0"
   },

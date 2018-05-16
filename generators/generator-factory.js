@@ -101,11 +101,11 @@ module.exports = function genGenerator( wording, write ) {
 
       cpTpl( "_package.json", "package.json", { moduleName, authorName, username, authorEmail, description, authorUrl } );
 
-      cp( "../../shared-template/todo.md", "todo.md" );
-      cp( "../../shared-template/editorconfig", ".editorconfig" );
-      cp( "../../shared-template/npmrc", ".npmrc" );
-      cpTpl( "../../shared-template/travis.yml", ".travis.yml", { authorEmail } );
-      cpTpl( "../../shared-template/license", "license", { authorName, authorEmail, authorUrl, year } );
+      cp( "todo.md", "todo.md" );
+      cp( "editorconfig", ".editorconfig" );
+      cp( "npmrc", ".npmrc" );
+      cpTpl( "travis.yml", ".travis.yml", { authorEmail } );
+      cpTpl( "license", "license", { authorName, authorEmail, authorUrl, year } );
     }
 
     git() {
