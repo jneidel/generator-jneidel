@@ -20,9 +20,9 @@ const config = [];
       filename: `${name}.js`,
     },
     module: {
-      loaders: prod ?
-        [ babel, scss.loader, pug( `../html/${name}.html` ) ] :
-        [ scss.loader, pug( `../html/${name}.html` ) ],
+      rules: prod ?
+        [ babel, scss.rule, pug( `../html/${name}.html` ) ] :
+        [ scss.rule, pug( `../html/${name}.html` ) ],
     },
     plugins     : [ scss.plugin ],
     optimization: {
