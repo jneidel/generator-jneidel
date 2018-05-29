@@ -9,6 +9,10 @@
     "email": "<%= authorEmail %>",
     "url": "<%= authorUrl %>"
   },
+  "main": "app.js",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "start": "concurrently \"npm run watch\" \"npm run build\" \"npm run unit\" --names \"💻 ,📦 ,☕️ \" --prefix name",
     "watch": "nodemon app.js --ignore dist/js/ --ignore tests/ --trace-sync-io",
