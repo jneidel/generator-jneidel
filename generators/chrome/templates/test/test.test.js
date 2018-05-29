@@ -1,5 +1,5 @@
-const { test } = require( "ava" );
+const test = require( "ava" );
 
-test( "${moduleName}", ( t ) => {
+test( "<%= moduleName %>", t => {
 
 } );

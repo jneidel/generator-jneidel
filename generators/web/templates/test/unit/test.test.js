@@ -1,4 +1,4 @@
-const { test } = require( "ava" );
+const test = require( "ava" );
 const sinon = require( "sinon" );
 require( "sinon-mongoose" );
 const mockery = require( "mockery" );
@@ -8,6 +8,6 @@ const { generateArgs, expectResJson } = require( "./utils" );
 
 const next = () => {};
 
-test( "${moduleName}", ( t ) => {
+test( "<%= moduleName %>", t => {
 
 } );
