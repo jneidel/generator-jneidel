@@ -4,7 +4,7 @@
 
 [![Travis Build Status](https://img.shields.io/travis/<%= username %>/<%= moduleName %>.svg?style=flat-square)](https://travis-ci.org/<%= username %>/<%= moduleName %>)
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/<%= username %>/<%= moduleName %>/blob/master/license)
-[![Npm Downloads](https://img.shields.io/npm/dt/<%= moduleName %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= moduleName %>)
+[![Npm Downloads](https://img.shields.io/npm/dw/<%= moduleName %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= moduleName %>)
 <%= codestyle %>
 
 In-depth description
