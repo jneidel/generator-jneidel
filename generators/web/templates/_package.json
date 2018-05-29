@@ -49,6 +49,13 @@
     "sinon-mongoose": "latest"
   },
   "ava": {
-    "files": [ "test/*.test.js", "test/**/*.test.js" ]
+    "files": [
+      "test/*.test.js",
+      "test/**/*.test.js"
+    ]
+  },
+  "config": {
+    "package-lock": false,
+    "loglevel": "error"
   }
 }
