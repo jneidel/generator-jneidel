@@ -18,7 +18,7 @@ const app = express();
 
 if ( NODE_ENV === "dev" ) {
   app.use( logger.dev );
-} if ( NODE_ENV === "production" ) {
+} if ( NODE_ENV === "prod" ) {
   app.use( logger.writeErrors );
   app.use( logger.writeRequests );
 }
@@ -64,7 +64,6 @@ app.use( sessions( {
 app.use( flash() );
 
 app.use( ( req, res, next ) => {
-  // res.locals.h = require( "./helpers/helpers" ); // eslint-disable-line global-require
   res.locals.flashes = req.flash();
   return next();
 } );
@@ -73,7 +72,7 @@ app.use( passport.initialize() );
 app.use( passport.session() );
 require( "./models/passport" );
 
-app.use( "/", require( "./routes/index" ) );
+app.use( "/", require( "./routes" ) );
 app.use( "/", require( "./routes/auth" ) );
 app.use( "/api", require( "./routes/api" ) );
 app.use( ( req, res ) => { throw new Error(); } );

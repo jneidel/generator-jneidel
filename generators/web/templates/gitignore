@@ -1,6 +1,9 @@
 node_modules/
-dist/js
-dist/css
-.yo-rc.json
+
+public/js
+public/css
+
 *.env
+
+.yo-rc.json
 todo.md

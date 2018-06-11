@@ -3,7 +3,7 @@ const { genScss, babel, browserSync, polyfill } = require( "setup-webpack" );
 
 require( "dotenv" ).config( { path: "vars.env" } );
 
-const prod = process.env.NODE_ENV === "production";
+const prod = process.env.NODE_ENV === "prod";
 
 const sync = browserSync( 8000, 8080 );
 
