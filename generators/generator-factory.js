@@ -103,7 +103,6 @@ module.exports = function genGenerator( wording, write ) {
 
       cp( "todo.md", "todo.md" );
       cp( "editorconfig", ".editorconfig" );
-      cp( "npmrc", ".npmrc" );
       cpTpl( "travis.yml", ".travis.yml", { authorEmail } );
       cpTpl( "license", "license", { authorName, authorEmail, authorUrl, year } );
     }
