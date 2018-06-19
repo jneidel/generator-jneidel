@@ -54,4 +54,14 @@ describe( "generator-jneidel", () => {
       assert.file( [ ".travis.yml", ".gitignore", ".editorconfig", "license", "lib/index.js", "lib/log.js", "test/index.test.js", "lib/commands.js", "bin/cli.js", "readme.md" ] );
     } );
   } );
+
+  describe( "jneidel:web-lite", () => {
+    beforeEach( () => helpers
+      .run( path.join( __dirname, "./generators/web-lite" ) )
+      .withPrompts( { someAnswer: true } ) );
+
+    it( "creates files", () => {
+      assert.file( [ ".travis.yml", ".gitignore", ".editorconfig", "license", "readme.md", "app.js", "error-handlers.js", "user-model.js", "webpack.config.js", "src/bundles/welcome.bundle.js", "src/js/welcome.js", "src/scss/welcome.scss", "src/scss/_vars.scss", "src/scss/layout.scss", "src/pug/login.pug", "src/pug/register.pug", "src/pug/error.pug", "logs/utils.js", "logs/logger.js", "public/favicon.ico", "routes.js", "src/pug/layout.pug", "src/pug/welcome.pug", "test.js", "vars.env" ] );
+    } );
+  } );
 } );

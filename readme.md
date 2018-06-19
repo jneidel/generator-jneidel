@@ -29,17 +29,8 @@ Boilerplates can be installed manually or using [Yeoman](https://github.com/yeom
 # node module
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/app/templates
 
-# chrome extension
-$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/chrome/templates
-
-# webapp
-$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/web/templates
-
-# static site
-$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/static/templates
-
-# cli module
-$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/cli/templates
+# To download a different boilerplate replace 'app' in the command above, with one of these:
+# [ chrome, cli, static, web, web-lite ]
 ```
 
 ### Install using Yeoman
@@ -82,6 +73,12 @@ $ yo jneidel:cli
 
 ```
 $ yo jneidel:static
+```
+
+**webapp (lite):**
+
+```
+$ yo jneidel:web-lite
 ```
 
 ## Assumptions
