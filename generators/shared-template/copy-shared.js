@@ -10,7 +10,7 @@ const writeFile = ( template, file, content ) => {
 };
 
 const files = [ "editorconfig", "license", "todo.md", "travis.yml" ];
-const templates = [ "app", "chrome", "static", "web", "cli" ];
+const templates = [ "app", "chrome", "static", "web", "cli", "web-lite" ];
 
 templates.forEach( template => {
   files.forEach( async file => {
