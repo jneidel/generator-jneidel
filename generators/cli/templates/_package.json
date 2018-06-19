@@ -1,0 +1,47 @@
+{
+  "name": "<%= moduleName %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "repository": "<%= username %>/<%= moduleName %>",
+  "license": "MIT",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorUrl %>"
+  },
+  "scripts": {
+    "test": "ava",
+    "testing": "ava -w",
+    "unit": "ava -w --match='*[unit]*'"
+  },
+  "main": "bin/cli.js",
+  "bin": {
+    "<%= moduleName %>": "bin/cli.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "log-update": "^2.3.0",
+    "meow": "^5.0.0",
+    "update-check": "^1.5.2"
+  },
+  "devDependencies": {
+    "ava": "latest",
+    "nodemon": "latest"
+  },
+  "ava": {
+    "files": [ "test/*.test.js" ]
+  },
+  "config": {
+    "package-lock": false,
+    "loglevel": "error"
+  },
+  "keywords": [
+    ""
+  ]
+}

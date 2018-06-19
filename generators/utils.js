@@ -1,7 +1,7 @@
 const normalizeUrl = require( "normalize-url" );
 const isScoped = require( "is-scoped" );
 const _s = require( "underscore.string" );
-const slugifyPackageName = name => ( isScoped( name ) ? name : _s.slugify( name ) );
+const slugifyPackageName = name => isScoped( name ) ? name : _s.slugify( name );
 
 /*
  * Utilities/building blocks for generator creation
@@ -9,8 +9,8 @@ const slugifyPackageName = name => ( isScoped( name ) ? name : _s.slugify( name 
 
 // Prompts
 
-exports.genPrompts = function genPrompts( type ) {
-  return [ // Type specifies what type of application: module, app, extension, etc
+exports.genPrompts = function genPrompts( type ) { // Type specifies what type of application: module, app, extension, etc
+  return [
     {
       type   : "input",
       name   : "moduleName",
@@ -28,21 +28,21 @@ exports.genPrompts = function genPrompts( type ) {
       name    : "username",
       message : "What is your GitHub username?",
       store   : true,
-      validate: x => ( x.length > 0 ? true : "You have to provide a username" ),
+      validate: x => x.length > 0 ? true : "You have to provide a username",
     },
     {
       type    : "input",
       name    : "authorName",
       message : "What is your full name?",
       store   : true,
-      validate: x => ( x.length > 0 ? true : "You have to provide your name" ),
+      validate: x => x.length > 0 ? true : "You have to provide your name",
     },
     {
       type    : "input",
       name    : "authorEmail",
       message : "What is your email?",
       store   : true,
-      validate: x => ( x.length > 0 ? true : "You have to provide your email" ),
+      validate: x => x.length > 0 ? true : "You have to provide your email",
     },
     {
       type   : "input",

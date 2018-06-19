@@ -44,4 +44,14 @@ describe( "generator-jneidel", () => {
       assert.file( [ ".travis.yml", ".gitignore", ".editorconfig", "webpack.config.js", "license", "vars.env", "vars.env.example", "readme.md", "package.json", "todo.md", "src/js/index.js", "src/scss/index.scss", "src/bundles/index.bundle.js", "src/pug/index.pug", "test.js" ] );
     } );
   } );
+
+  describe( "jneidel:cli", () => {
+    beforeEach( () => helpers
+      .run( path.join( __dirname, "./generators/cli" ) )
+      .withPrompts( { someAnswer: true } ) );
+
+    it( "creates files", () => {
+      assert.file( [ ".travis.yml", ".gitignore", ".editorconfig", "license", "lib/index.js", "lib/log.js", "test/index.test.js", "lib/commands.js", "bin/cli.js", "readme.md" ] );
+    } );
+  } );
 } );

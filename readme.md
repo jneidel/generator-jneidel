@@ -11,6 +11,8 @@ Boilerplates available for creating:
 - node module
 - chrome extension
 - node webapp
+- cli module
+- static site
 
 ## Install
 
@@ -35,6 +37,9 @@ $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz 
 
 # static site
 $ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/static/templates
+
+# cli module
+$ curl -fsSL https://github.com/jneidel/generator-jneidel/archive/master.tar.gz | tar -xz --strip-components=4 generator-jneidel-master/generators/cli/templates
 ```
 
 ### Install using Yeoman
@@ -65,6 +70,12 @@ $ yo jneidel:chrome
 
 ```
 $ yo jneidel:web
+```
+
+**cli:**
+
+```
+$ yo jneidel:cli
 ```
 
 **static website:**
