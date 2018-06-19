@@ -31,7 +31,7 @@ describe( "generator-jneidel", () => {
       .withPrompts( { someAnswer: true } ) );
 
     it( "creates files", () => {
-      assert.file( [ "license", "readme.md", ".travis.yml", ".gitignore", ".editorconfig", "models/reserved-usernames.js", "models/User.js", "models/passport.js", "routes/api.js", "routes/auth.js", "src/bundles/welcome.bundle.js", "src/js/welcome.js", "src/scss/welcome.scss", "src/scss/_vars.scss", "src/scss/layout.scss", "src/pug/login.pug", "src/pug/register.pug", "test/unit/utils.js", "webpack.config.js", "todo.md", "app.js", "logs/utils.js", "logs/logger.js", "public/favicon.ico", "handlers/errorHandlers.js", "src/pug/error.pug", "routes/index.js", "src/pug/layout.pug", "src/pug/welcome.pug", "test/unit/test.test.js", "vars.env" ] );
+      assert.file( [ "license", "readme.md", ".travis.yml", ".gitignore", ".editorconfig", "models/reserved-usernames.js", "models/User.js", "models/passport.js", "routes/api.js", "routes/auth.js", "src/bundles/welcome.bundle.js", "src/js/welcome.js", "src/scss/welcome.scss", "src/scss/_vars.scss", "src/scss/layout.scss", "src/pug/login.pug", "src/pug/register.pug", "test/unit/utils.js", "webpack.config.js", "todo.md", "app.js", "logs/utils.js", "logs/logger.js", "public/favicon.ico", "handlers/errorHandlers.js", "src/pug/error.pug", "routes/index.js", "src/pug/layout.pug", "src/pug/welcome.pug", "test/unit/test.test.js", "vars.env", "vars.env.example" ] );
     } );
   } );
 
@@ -61,7 +61,7 @@ describe( "generator-jneidel", () => {
       .withPrompts( { someAnswer: true } ) );
 
     it( "creates files", () => {
-      assert.file( [ ".travis.yml", ".gitignore", ".editorconfig", "license", "readme.md", "app.js", "error-handlers.js", "user-model.js", "webpack.config.js", "src/bundles/welcome.bundle.js", "src/js/welcome.js", "src/scss/welcome.scss", "src/scss/_vars.scss", "src/scss/layout.scss", "src/pug/login.pug", "src/pug/register.pug", "src/pug/error.pug", "logs/utils.js", "logs/logger.js", "public/favicon.ico", "routes.js", "src/pug/layout.pug", "src/pug/welcome.pug", "test.js", "vars.env" ] );
+      assert.file( [ ".travis.yml", ".gitignore", ".editorconfig", "license", "readme.md", "app.js", "error-handlers.js", "user-model.js", "webpack.config.js", "src/bundles/welcome.bundle.js", "src/js/welcome.js", "src/scss/welcome.scss", "src/scss/_vars.scss", "src/scss/layout.scss", "src/pug/login.pug", "src/pug/register.pug", "src/pug/error.pug", "logs/utils.js", "logs/logger.js", "public/favicon.ico", "routes.js", "src/pug/layout.pug", "src/pug/welcome.pug", "test.js", "vars.env", "vars.env.example" ] );
     } );
   } );
 } );
