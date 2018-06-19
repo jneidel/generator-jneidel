@@ -1,5 +1,5 @@
 const path = require( "path" );
-const { genScss, pug, babel } = require( "setup-webpack" );
+const { genScss, pug, babel, img, polyfill } = require( "setup-webpack" );
 
 require( "dotenv" ).config( { path: "vars.env" } );
 
@@ -22,20 +22,20 @@ const config = [ {
 
 const name = "options"; // site name
 
+const entryPath = `./src/bundles/${name}.bundle.js`;
 const scss = genScss( `../css/${name}.css` );
+
+const rules = [ scss.rule, scss.font, img( "img" ), pug( `../html/${name}.html` ) ];
+if ( prod ) rules.push( babel );
 
 config.push( {
   mode  : prod ? "production" : "development",
-  entry : `./src/bundles/${name}.bundle.js`,
+  entry : prod ? polyfill( entryPath ) : entryPath,
   output: {
     path    : path.resolve( __dirname, "dist/js" ),
     filename: `${name}.js`,
   },
-  module: {
-    rules: prod ?
-      [ babel, scss.rule, pug( `../html/${name}.html` ) ] :
-      [ scss.rule, pug( `../html/${name}.html` ) ],
-  },
+  module      : { rules },
   plugins     : [ scss.plugin ],
   optimization: {
     minimize : true,
@@ -49,19 +49,19 @@ config.push( {
 // Array of sites
 [ "options", "help" ].forEach( ( name ) => {
   const scss = genScss( `../css/${name}.css` );
+  const entryPath =  `./src/bundles/${name}.bundle.js`;
+
+  const rules = [ scss.rule, scss.font, img( "img" ), pug( `../html/${name}.html` ) ];
+  if ( prod ) rules.push( babel );
 
   config.push( {
     mode  : prod ? "production" : "development",
-    entry : `./src/bundles/${name}.bundle.js`,
+    entry : prod ? polyfill( entryPath ) : entryPath,
     output: {
       path    : path.resolve( __dirname, "dist/js" ),
       filename: `${name}.js`,
     },
-    module: {
-      rules: prod ?
-        [ babel, scss.rule, pug( `../html/${name}.html` ) ] :
-        [ scss.rule, pug( `../html/${name}.html` ) ],
-    },
+    module: { rules },
     plugins     : [ scss.plugin ],
     optimization: {
       minimize : true,
