@@ -9,7 +9,7 @@ const writeFile = ( template, file, content ) => {
   console.log( `Wrote: ${outPath}` );
 };
 
-const files = [ "editorconfig", "license", "todo.md", "travis.yml" ];
+const files = [ "editorconfig", "license", "todo.md", "travis.yml", "npmrc" ];
 const templates = [ "app", "chrome", "static", "web", "cli", "web-lite" ];
 
 templates.forEach( template => {

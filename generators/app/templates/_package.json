@@ -29,9 +29,5 @@
   },
   "keywords": [
     ""
-  ],
-  "config": {
-    "package-lock": false,
-    "loglevel": "error"
-  }
+  ]
 }

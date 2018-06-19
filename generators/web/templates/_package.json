@@ -56,9 +56,5 @@
       "test/*.test.js",
       "test/**/*.test.js"
     ]
-  },
-  "config": {
-    "package-lock": false,
-    "loglevel": "error"
   }
 }

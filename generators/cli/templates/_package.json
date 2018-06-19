@@ -37,10 +37,6 @@
   "ava": {
     "files": [ "test/*.test.js" ]
   },
-  "config": {
-    "package-lock": false,
-    "loglevel": "error"
-  },
   "keywords": [
     ""
   ]
