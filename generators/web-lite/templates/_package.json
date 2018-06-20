@@ -23,11 +23,8 @@
   },
   "dependencies": {
     "body-parser": "latest",
-    "connect-flash": "latest",
     "dotenv": "latest",
     "express": "latest",
-    "express-session": "latest",
-    "express-sessions": "latest",
     "mongoose": "latest",
     "mongoose-mongodb-errors": "latest",
     "normalize-scss": "latest",
