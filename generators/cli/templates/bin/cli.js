@@ -6,8 +6,7 @@ const commands = require( "../lib/commands" );
 
 /* Cli entry point */
 
-const cli = meow( `
-  Usage
+const cli = meow( `Usage
     $ <%= moduleName %>
 
   Commands
@@ -27,9 +26,7 @@ const cli = meow( `
     =>
 
   For the documentation please refer to:
-  https://github.com/<%= username %>/<%= moduleName %>
-
-`, {
+  https://github.com/<%= username %>/<%= moduleName %>`, {
     description: "<%= moduleName %>: <%= description %>",
     flags      : {
       out: {
