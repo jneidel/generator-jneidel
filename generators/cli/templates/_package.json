@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
+    "inquirer": "^6.0.0",
     "log-update": "^2.3.0",
     "meow": "^5.0.0",
     "update-check": "^1.5.2"

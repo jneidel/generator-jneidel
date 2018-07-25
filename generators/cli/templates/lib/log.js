@@ -1,5 +1,6 @@
 const logUpdate = require( "log-update" );
 const chalk = require( "chalk" );
+const inquirer = require( "inquirer" );
 
 exports.update = function update( msg ) {
   logUpdate( msg );
@@ -14,4 +15,6 @@ exports.updatePrompt = function updateprompt( msg ) {
 exports.printPrompt = function printPrompt( msg ) {
   console.log( `${chalk.green( `❯` )} ${msg}` );
 };
+
+exports.prompt = obj => inquirer( [ obj ] );
 
