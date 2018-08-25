@@ -7,3 +7,5 @@ public/css
 
 .yo-rc.json
 todo.md
+
+logs/*.log

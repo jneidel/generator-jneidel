@@ -3,7 +3,7 @@ const mongoose = require( "mongoose" );
 const mongodbErrorHandler = require( "mongoose-mongodb-errors" );
 const bodyParser = require( "body-parser" );
 const logger = require( "./logs/logger" );
-const errorHandlers = require( "./errorHandlers" );
+const errorHandlers = require( "./error-handlers" );
 
 require( "dotenv" ).config( { path: "vars.env" } );
 const NODE_ENV = process.env.NODE_ENV;
