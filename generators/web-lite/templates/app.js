@@ -45,5 +45,5 @@ if ( NODE_ENV === "dev" ) {
 const port = process.env.PORT || 8000;
 
 app.listen( port, () => {
-  console.log( `Server running on port ${port}.` ); // eslint-disable-line no-console
+  console.log( `Server running on port ${port}` ); // eslint-disable-line no-console
 } );
