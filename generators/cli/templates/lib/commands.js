@@ -21,9 +21,14 @@ function checkForUpdate() {
       if ( update )
         log.promptConsole( `A new version of <%= moduleName %> is available: current ${pkg.version}, latest ${update.latest}` );
     } )
+    .catch( err => {
+      if ( err.code !== "ENOTFOUND" )
+        log.print( err.message, { err } );
+    } );
 }
 
 module.exports = {
   config,
   <%= moduleName %>
 };
+

@@ -88,3 +88,4 @@ $ npm run test
 ## License
 
 MIT © [<%= authorName %>](<%= authorUrl %>)
+
