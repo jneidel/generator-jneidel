@@ -9,7 +9,7 @@ exports.print = function print( msg ) {
   console.log( msg );
 };
 
-exports.updatePrompt = function updateprompt( msg ) {
+exports.updatePrompt = function updatePrompt( msg ) {
   logUpdate( `${chalk.green( `❯` )} ${msg}` );
 };
 exports.printPrompt = function printPrompt( msg ) {
