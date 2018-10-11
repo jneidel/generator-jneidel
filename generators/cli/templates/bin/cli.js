@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const meow = require( "meow" );
 
 const lib = require( "../lib" );
@@ -7,26 +9,25 @@ const commands = require( "../lib/commands" );
 /* Cli entry point */
 
 const cli = meow( `Usage
-    $ <%= moduleName %>
+  $ <%= moduleName %>
 
-  Commands
-    update this
-    check  that
+Commands
+  update this
+  check  that
 
+Options
+  -o, --out   Set
+  -m, --micro Micro
 
-  Options
-    --out, -o   Set
-    --micro, -m Micro
+Examples
+  $ <%= moduleName %>
+  =>
 
-  Examples
-    $ <%= moduleName %>
-    =>
+  $ <%= moduleName %>
+  =>
 
-    $ <%= moduleName %>
-    =>
-
-  For the documentation please refer to:
-  https://github.com/<%= username %>/<%= moduleName %>`, {
+For the documentation please refer to:
+https://github.com/<%= username %>/<%= moduleName %>`, {
     description: "<%= moduleName %>: <%= description %>",
     flags      : {
       out: {
