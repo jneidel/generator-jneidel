@@ -16,5 +16,5 @@ exports.printPrompt = function printPrompt( msg ) {
   console.log( `${chalk.green( `❯` )} ${msg}` );
 };
 
-exports.prompt = obj => inquirer( [ obj ] );
+exports.prompt = obj => inquirer.prompt( [ obj ] );
 
