@@ -28,6 +28,7 @@
     "connect-flash": "latest",
     "compression": "latest",
     "dotenv": "latest",
+    "expect": "latest",
     "express": "latest",
     "express-session": "latest",
     "express-sessions": "latest",
