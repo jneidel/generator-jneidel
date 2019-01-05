@@ -8,43 +8,33 @@ const sessions = require( "express-session" );
 const SessionStore = require( "express-sessions" );
 const flash = require( "connect-flash" );
 const passport = require( "passport" );
-const logger = require( "./logs/logger" );
 const errorHandlers = require( "./handlers/errorHandlers" );
-
-require( "dotenv" ).config( { path: "vars.env" } );
-const NODE_ENV = process.env.NODE_ENV;
+const httpLogger = require( "./logs/http-logger" );
+const logger = require( "./util/logger" );
+const secrets = require( "./util/secrets" );
 
 const app = express();
 
-if ( NODE_ENV === "dev" ) {
-  app.use( logger.dev );
-} if ( NODE_ENV === "prod" ) {
-  app.use( logger.writeErrors );
-  app.use( logger.writeRequests );
-}
-
-const User = require( "./models/User" );
+const User = require( "./models/User" ); // Needed?
 
 mongoose.Promise = global.Promise;
 mongoose.plugin( mongodbErrorHandler );
-mongoose.connect( process.env.MONGO );
+mongoose.connect( secrets.MONGODB_URI ).catch( err => {
+  logger.error( `MongoDB connection error. Please make sure MongoDB is running. ${err}` );
+  process.exit();
+} );
 
 app.use( helmet( { referrerPolicy: true } ) );
-
+app.use( compression() );
 app.set( "view engine", "pug" );
 app.set( "views", `${__dirname}/src/pug` );
-
 app.use( express.static( `${__dirname}/public` ) );
-
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
-app.use( compression() );
-
 const expires = 1000 * 60 * 60 * 24 * 30; // 30 days
-
 app.use( sessions( {
-  secret           : process.env.SECRET,
+  secret           : secrets.SESSION_SECRET,
   key              : "<%= moduleName %>",
   name             : "<%= moduleName %>",
   resave           : false,
@@ -62,7 +52,6 @@ app.use( sessions( {
   } ),
 } ) );
 app.use( flash() );
-
 app.use( ( req, res, next ) => {
   res.locals.flashes = req.flash();
   return next();
@@ -72,6 +61,13 @@ app.use( passport.initialize() );
 app.use( passport.session() );
 require( "./models/passport" );
 
+if ( secrets.ENVIRONMENT === "production" ) {
+  app.use( httpLogger.writeErrors );
+  app.use( httpLogger.writeRequests );
+} else {
+  app.use( httpLogger.dev );
+}
+
 app.use( "/", require( "./routes" ) );
 app.use( "/", require( "./routes/auth" ) );
 app.use( "/api", require( "./routes/api" ) );
@@ -80,14 +76,13 @@ app.use( ( req, res ) => { throw new Error(); } );
 app.use( errorHandlers.notFound );
 app.use( errorHandlers.flashValidationErrors );
 
-if ( NODE_ENV === "dev" ) {
-  app.use( errorHandlers.developmentErrors );
-} else {
+if ( secret.ENVIRONMENT === "production" ) {
   app.use( errorHandlers.productionErrors );
+} else {
+  app.use( errorHandlers.developmentErrors );
 }
 
-const port = process.env.PORT || 8000;
-
-app.listen( port, () => {
-  console.log( `Server running on port ${port}` ); // eslint-disable-line no-console
+app.listen( secrets.PORT, () => {
+  logger.debug( `Server running on port ${secrets.PORT}` );
 } );
+
