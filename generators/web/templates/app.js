@@ -5,7 +5,7 @@ const helmet = require( "helmet" );
 const bodyParser = require( "body-parser" );
 const compression = require( "compression" );
 const sessions = require( "express-session" );
-const SessionStore = require( "express-sessions" );
+const MongoStore = require( "connect-mongo" )( session );
 const flash = require( "connect-flash" );
 const passport = require( "passport" );
 const errorHandlers = require( "./handlers/errorHandlers" );
@@ -31,24 +31,17 @@ app.use( express.static( `${__dirname}/public` ) );
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
-const expires = 1000 * 60 * 60 * 24 * 30; // 30 days
-app.use( sessions( {
+app.use( session( {
   secret           : secrets.SESSION_SECRET,
-  key              : "<%= moduleName %>",
-  name             : "<%= moduleName %>",
+  key              : "lock-me-out",
   resave           : false,
   saveUninitialized: false,
   cookie           : {
-    maxAge  : expires,
+    maxAge  : 1000 * 60 * 60 * 24 * 30, // 30 days
     httpOnly: true,
     secure  : true,
   },
-  store: new SessionStore( {
-    storage   : "mongodb",
-    instance  : mongoose,
-    collection: "sessions",
-    expire    : expires,
-  } ),
+  store: new MongoStore( { mongooseConnection: mongoose.connection } ),
 } ) );
 app.use( flash() );
 app.use( ( req, res, next ) => {
