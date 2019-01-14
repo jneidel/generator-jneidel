@@ -10,7 +10,6 @@ const flash = require( "connect-flash" );
 const passport = require( "passport" );
 const errorHandlers = require( "./handlers/errorHandlers" );
 const httpLogger = require( "./logs/http-logger" );
-const logger = require( "./util/logger" );
 const secrets = require( "./util/secrets" );
 
 const app = express();
@@ -20,7 +19,7 @@ const User = require( "./models/User" ); // Needed?
 mongoose.Promise = global.Promise;
 mongoose.plugin( mongodbErrorHandler );
 mongoose.connect( secrets.MONGODB_URI ).catch( err => {
-  logger.error( `MongoDB connection error. Please make sure MongoDB is running. ${err}` );
+  console.log( `MongoDB connection error. Please make sure MongoDB is running. ${err}` );
   process.exit();
 } );
 
@@ -76,13 +75,13 @@ app.use( ( req, res ) => { throw new Error(); } );
 app.use( errorHandlers.notFound );
 app.use( errorHandlers.flashValidationErrors );
 
-if ( secret.ENVIRONMENT === "production" ) {
+if ( secrets.ENVIRONMENT === "production" ) {
   app.use( errorHandlers.productionErrors );
 } else {
   app.use( errorHandlers.developmentErrors );
 }
 
 app.listen( secrets.PORT, () => {
-  logger.debug( `Server running on port ${secrets.PORT}` );
+  console.log( `Server running on port ${secrets.PORT}` );
 } );
 
