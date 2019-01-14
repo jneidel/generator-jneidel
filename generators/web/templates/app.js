@@ -18,7 +18,7 @@ const User = require( "./models/User" ); // Needed?
 
 mongoose.Promise = global.Promise;
 mongoose.plugin( mongodbErrorHandler );
-mongoose.connect( secrets.MONGODB_URI ).catch( err => {
+mongoose.connect( secrets.MONGODB_URI, { useNewUrlParser: true } ).catch( err => {
   console.log( `MongoDB connection error. Please make sure MongoDB is running. ${err}` );
   process.exit();
 } );
