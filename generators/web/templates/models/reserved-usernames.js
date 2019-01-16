@@ -1,4 +1,4 @@
-module.exports = [
+const reservedUsernames = new Set( [
   "0",
   "about",
   "access",
@@ -600,4 +600,9 @@ module.exports = [
   "yourname",
   "yoursite",
   "yourusername",
-];
+] );
+
+module.export = function inReservedUsernames( name ) {
+  return reservedUsernames.has( name )
+}
+

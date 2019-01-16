@@ -1,7 +1,7 @@
 const mongoose = require( "mongoose" );
 const bcrypt = require( "bcrypt" );
 const validator = require( "validator" );
-const reservedUsername = require( "./reserved-usernames" );
+const isReservedUsername = require( "./reserved-usernames" );
 
 const schema = new mongoose.Schema( {
   username: {
@@ -10,7 +10,7 @@ const schema = new mongoose.Schema( {
     trim    : true,
     alias   : "name",
     required: "Please supply a username",
-    validate: x => !~reservedUsername.indexOf( x ),
+    validate: x => !isReservedUsername( x ),
   },
   /* Using email instead of username
     email: {
