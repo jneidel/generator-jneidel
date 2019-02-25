@@ -5,7 +5,6 @@ const helmet = require( "helmet" );
 const bodyParser = require( "body-parser" );
 const compression = require( "compression" );
 const sessions = require( "express-session" );
-const MongoStore = require( "connect-mongo" )( session );
 const flash = require( "connect-flash" );
 const passport = require( "passport" );
 const errorHandlers = require( "./handlers/errorHandlers" );
@@ -14,7 +13,7 @@ const secrets = require( "./util/secrets" );
 
 const app = express();
 
-const User = require( "./models/User" ); // Needed?
+const User = require( "./models/User" );
 
 mongoose.Promise = global.Promise;
 mongoose.plugin( mongodbErrorHandler );
@@ -39,9 +38,8 @@ app.use( session( {
   cookie           : {
     maxAge  : 1000 * 60 * 60 * 24 * 30, // 30 days
     httpOnly: true,
-    secure  : true,
+    secure  : true, // false for localhost
   },
-  store: new MongoStore( { mongooseConnection: mongoose.connection } ),
 } ) );
 app.use( flash() );
 app.use( ( req, res, next ) => {
